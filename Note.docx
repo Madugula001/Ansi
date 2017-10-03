@@ -17,4 +17,12 @@ NOTE: ansible is the executable for doing ad-hoc one-task
 executions and ansible-playbook is the executable that will
 process playbooks for orchestrating many tasks.
 
+When ansible or ansible-playbook is directed at an executable file for an
+inventory source, Ansible will execute that script with a single argument, --list.
+This is so that Ansible can get a listing of the entire inventory in order to build up
+its internal objects to represent the data. Once that data is built up, Ansible will then
+execute the script with a different argument for every host in the data to discover
+variable data. The argument used in this execution is --host <hostname>, which
+will return any variable data specific to that host.
+
 ---------------------------------------------------------------------------------------------------
