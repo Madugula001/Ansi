@@ -1,0 +1,20 @@
+---
+- name: relative path play
+  hosts: all
+  gather_facts: false
+  
+
+  vars_files:
+  - a_vars_file.yaml
+ 
+  tasks:
+  - name: who am I
+    debug:
+      msg: "I am mastery task"
+
+  - name: var from file
+    debug: var=something
+
+  - include: tasks/a.yaml
+  
+  - include: tasks/b.yaml
