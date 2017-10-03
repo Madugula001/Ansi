@@ -11,6 +11,10 @@ root@Ansible:~/Ansi# ansible all -i hosts -a uptime
 10.10.10.13 | SUCCESS | rc=0 >>
  10:33:54 up 11 min,  1 user,  load average: 0.02, 0.02, 0.00
 
-root@Ansible:~/Ansi#
 
+--------------------------------------------------------------------------------------------------
+NOTE: ansible is the executable for doing ad-hoc one-task
+executions and ansible-playbook is the executable that will
+process playbooks for orchestrating many tasks.
 
+---------------------------------------------------------------------------------------------------
