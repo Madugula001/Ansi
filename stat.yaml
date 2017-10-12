@@ -1,0 +1,15 @@
+---
+- name: Stat checking
+  hosts: localhost
+  gather_facts: false
+  
+  tasks:
+  - name: Stat facts checking
+    stat: 
+      path: /root/Ansi
+    register: p
+
+  - name: Print out
+    debug:
+      msg: "{{p.stat.path}}"
+    when: p.stat.isdir

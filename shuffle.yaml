@@ -1,0 +1,10 @@
+---
+- name: demo the filters
+  hosts: all
+  gather_facts: false
+ 
+  tasks:
+  - name: shuffle the cards
+    debug: 
+      msg: "{{ ['Ace','Queen','King','Deuce'] | shuffle }}"
+

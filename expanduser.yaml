@@ -1,0 +1,10 @@
+---
+- name: demo of the expanduser filter
+  hosts: localhost
+  gather_facts: false
+  
+  tasks:
+  - name: demo filter 
+    debug: 
+      msg: "{{ '~/.basename.yaml' | expanduser }}"
+

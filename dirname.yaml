@@ -1,0 +1,14 @@
+---
+- name: Dirname filter demo
+  hosts: localhost
+  gather_facts: false
+  
+  tasks:
+  - name: Dirname filter demo
+    debug: 
+      msg: "{{ '/var/log/nova/nova-api.log' | dirname }}"
+    register: dir
+
+  - name: Dirname
+    debug:
+      var: "{{dir.changed}}"

@@ -1,0 +1,17 @@
+---
+- name: Lookup Demo
+  hosts: all
+  gather_facts: False
+
+  vars: 
+    content: "{{lookup('file','gamma.csv')}}"
+
+  
+  tasks:
+  - name: Look up Msg
+    debug: msg="{{lookup('csvfile','lunch file=gamma.csv delimiter=, col=1')}}"
+
+  - name: Look up Vars
+    debug:
+      var: content
+   

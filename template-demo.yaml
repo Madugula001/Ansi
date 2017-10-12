@@ -1,0 +1,12 @@
+---
+- name: Demo the template
+  hosts: all
+  gather_facts: false
+  
+  vars:
+    data_dirs: ['/','/tmp','/bin']
+
+  tasks:
+  - name: First task
+    pause:
+      prompt:  "{{ lookup('template','demo.j2') }}"

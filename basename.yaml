@@ -1,0 +1,10 @@
+---
+- name: Demo the filters
+  hosts: localhost
+  gather_facts: false
+  
+  tasks:
+  - name: Basename filter demo
+    debug:
+      msg: "{{ '/var/log/nova/nova-api.log' | basename }}"
+
